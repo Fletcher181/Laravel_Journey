@@ -3,10 +3,13 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\AdminController;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/testadmin', [AdminController::class,'adminTest'])->middleware(['auth', 'verified', 'admin']);
 
 Route::get('/dashboard', [StaffController::class,'Dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 

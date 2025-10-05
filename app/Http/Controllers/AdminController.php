@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function adminTest() {
-        return view('admin.testfile');
+    public function viewInventory() {
+        return view('admin.viewInventory');
     }
 }
